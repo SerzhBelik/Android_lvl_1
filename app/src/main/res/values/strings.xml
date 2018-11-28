@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Weather</string>
     <string name="head">Погода на завтра</string>
-    <string name="temperature">Температура - </string>
-    <string name="wind">Ветер - </string>
-    <string name="humidity">Влажность - </string>
-    <string name="weather_type">Тип погоды - </string>
+    <string name="temperature">Температура:</string>
+    <string name="wind">Ветер:</string>
+    <string name="humidity">Влажность:</string>
+    <string name="weather_type">Тип погоды:</string>
+    <string name="city">Ваш город:</string>
 </resources>
