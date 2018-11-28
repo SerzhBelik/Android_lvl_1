@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Weather";
     String[] weather = {"солнечно", "переменная облачность", "облачно", "осадки"};
+    String[]temperature = {"0 - +10", "+10 - +15", "+ 15 - +10", "> +25"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
-        // заголовок
-        spinner.setPrompt("Title");
-        // выделяем элемент
         spinner.setSelection(0);
 
     }

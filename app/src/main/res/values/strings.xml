@@ -6,4 +6,5 @@
     <string name="humidity">Влажность:</string>
     <string name="weather_type">Тип погоды:</string>
     <string name="city">Ваш город:</string>
+    <string name="button">Отправить</string>
 </resources>
