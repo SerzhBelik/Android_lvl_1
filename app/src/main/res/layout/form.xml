@@ -130,7 +130,7 @@
         app:layout_constraintTop_toTopOf="@+id/humidity"></Spinner>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
