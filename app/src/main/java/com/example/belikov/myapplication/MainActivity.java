@@ -50,13 +50,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
 
-//        if (savedInstanceState != null) {
-//            lang = savedInstanceState.getString("lang");
-//            wind = savedInstanceState.getStringArray("wind");
-//            weather = savedInstanceState.getStringArray("weather");
-//        }
-
-
         String instanceState;
         if (savedInstanceState == null){
             instanceState = "Первый запуск!";
@@ -94,10 +87,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner = (Spinner) findViewById(R.id.spinner);
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        spinner = findViewById(R.id.spinner);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.spinner2);
+        spinner3 = findViewById(R.id.spinner3);
 
         spinner.setAdapter(adapter);
         spinner1.setAdapter(adapter1);
@@ -109,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         spinner2.setSelection(0);
         spinner3.setSelection(0);
 
-        Button button = (Button) findViewById(R.id.button1);
+        Button button = findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,18 +186,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         if (isChecked){
             if (Locale.getDefault().getLanguage().equals("ru")) return;
             setLocale("ru");
-
-
         }
         if (!isChecked){
             if (Locale.getDefault().getLanguage().equals("en")) return;
             setLocale("en");
-
-
         }
-
         startActivityForResult(new Intent(this, MainActivity.class), 0);
-
     }
 
     private void setLocale(String lang){
