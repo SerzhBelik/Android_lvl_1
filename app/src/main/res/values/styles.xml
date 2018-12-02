@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/myColorPrimary</item>
+        <item name="colorPrimaryDark">@color/myColorPrimaryDark</item>
+        <item name="colorAccent">@color/myColorAccent</item>
+    </style>
+
+    <style name="MyTextStyle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/myColorAccent</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="HeadTextStyle">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/myColorAccent</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
 </resources>
