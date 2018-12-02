@@ -8,4 +8,5 @@ public class Parcel implements Serializable {
     public String temperature;
     public String wind;
     public String humidity;
+//    пар
 }
