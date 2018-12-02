@@ -191,17 +191,14 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
 
         if (isChecked){
-            if(flag) return;
+            if (Locale.getDefault().getLanguage().equals("ru")) return;
             setLocale("ru");
-            flag = true;
 
 
         }
         if (!isChecked){
-            if (!flag) return;
             if (Locale.getDefault().getLanguage().equals("en")) return;
             setLocale("en");
-            flag = false;
 
 
         }
