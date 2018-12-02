@@ -1,5 +1,6 @@
 package com.example.belikov.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         Button button = findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongViewCast")
             @Override
             public void onClick(View v) {
                 Parcel parcel = new Parcel();

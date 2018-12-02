@@ -17,11 +17,11 @@ public class SecondActivity extends AppCompatActivity {
 
         Parcel parcel = (Parcel) getIntent().getExtras().getSerializable(TEXT);
 
-        TextView city = (TextView) findViewById(R.id.city);
-        TextView weather = (TextView) findViewById(R.id.weather_type);
-        TextView temperature = (TextView) findViewById(R.id.temperature);
-        TextView wind = (TextView) findViewById(R.id.wind);
-        TextView humidity = (TextView) findViewById(R.id.humidity);
+        TextView city = findViewById(R.id.city);
+        TextView weather = findViewById(R.id.weather_type);
+        TextView temperature = findViewById(R.id.temperature);
+        TextView wind = findViewById(R.id.wind);
+        TextView humidity = findViewById(R.id.humidity);
         String tomorrow = getResources().getString(R.string.tomorrow);
 
         city.setText(city.getText() + " " + parcel.city);
@@ -29,9 +29,6 @@ public class SecondActivity extends AppCompatActivity {
         temperature.setText(temperature.getText() + " " + parcel.temperature);
         wind.setText(wind.getText() + " " + parcel.wind);
         humidity.setText(humidity.getText() + " " + parcel.humidity);
-
-
-
 
         String instanceState;
         if (savedInstanceState == null) {
