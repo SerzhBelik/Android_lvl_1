@@ -22,9 +22,10 @@ public class SecondActivity extends AppCompatActivity {
         TextView temperature = (TextView) findViewById(R.id.temperature);
         TextView wind = (TextView) findViewById(R.id.wind);
         TextView humidity = (TextView) findViewById(R.id.humidity);
+        String tomorrow = getResources().getString(R.string.tomorrow);
 
         city.setText(city.getText() + " " + parcel.city);
-        weather.setText("Завтра будет: " + parcel.weather);
+        weather.setText(tomorrow + " " + parcel.weather);
         temperature.setText(temperature.getText() + " " + parcel.temperature);
         wind.setText(wind.getText() + " " + parcel.wind);
         humidity.setText(humidity.getText() + " " + parcel.humidity);

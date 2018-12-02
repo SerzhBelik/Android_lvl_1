@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Погода</string>
+    <string name="head">Погода на завтра</string>
+    <string name="temperature">Температура:</string>
+    <string name="wind">Ветер:</string>
+    <string name="humidity">Влажность:</string>
+    <string name="weather_type">Тип погоды:</string>
+    <string name="city">Ваш город:</string>
+    <string name="button">Отправить</string>
+    <string name="tomorrow" tools:ignore="ExtraTranslation">Завтра будет </string>
+    <string name="weather1" tools:ignore="ExtraTranslation">солнечно:</string>
+    <string name="weather2" tools:ignore="ExtraTranslation">переменная облачность:</string>
+    <string name="weather3" tools:ignore="ExtraTranslation">облачно:</string>
+    <string name="weather4" tools:ignore="ExtraTranslation">осадки:</string>
+</resources>

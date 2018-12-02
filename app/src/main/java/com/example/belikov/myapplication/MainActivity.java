@@ -9,15 +9,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Weather";
     private static final String TEXT = "Get weather";
-    String[] weather = {"солнечно", "переменная облачность", "облачно", "осадки"};
+    String[] weather_en = {"sunny", "partially cloudy", "cloudy", "rainy"};
+    String[] weather_ru = {"солнечно", "переменная облачность", "облачно", "осадки"};
     String[]temperature = {"0 - +10", "+10 - +15", "+ 15 - +10", "> +25"};
-    String[]wind = {"0 - 3 м/с", "3 - 5 м/с", "5 - 10 м/с", "> 10 м/с"};
+    String[]wind_ru = {"0 - 3 м/с", "3 - 5 м/с", "5 - 10 м/с", "> 10 м/с"};
+    String[]wind_en = {"0 - 3 mps", "3 - 5 mps", "5 - 10 mps", "> 10 mps"};
     String[]humidity = {"0 - 20%", "20 - 50%", "50 - 80%", "> 80%"};
 
     Spinner spinner;
@@ -38,12 +41,18 @@ public class MainActivity extends AppCompatActivity {
         else{
             instanceState = "Повторный запуск!";
         }
+
+//        Switch switch = findViewById(R.id.monitored_switch);
+//        if (switch != null) {
+//            switch.setOnCheckedChangeListener(this);
+//        }
+
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
         Log.i(TAG, instanceState + " - onCreate()");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, weather);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, weather_en);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, temperature);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wind);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wind_en);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, humidity);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

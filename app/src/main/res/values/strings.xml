@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Погода</string>
     <string name="head">Погода на завтра</string>
     <string name="temperature">Температура:</string>
     <string name="wind">Ветер:</string>
@@ -7,4 +7,5 @@
     <string name="weather_type">Тип погоды:</string>
     <string name="city">Ваш город:</string>
     <string name="button">Отправить</string>
+    <string name="tomorrow" translatable="false">Завтра будет </string>
 </resources>

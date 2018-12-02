@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="81dp"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    tools:layout_editor_absoluteY="81dp">
 
+
+    <Switch
+        android:id="@+id/monitored_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="en"
+        android:textOn="ru"
+        app:layout_constraintEnd_toStartOf="@+id/editText1"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/city"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="39dp"
         android:text="@string/city"
-        style="@style/MyTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/editText1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +36,7 @@
         android:id="@+id/editText1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="11dp"
         android:ems="10"
@@ -37,13 +48,13 @@
 
     <TextView
         android:id="@+id/weather_type"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="24dp"
         android:text="@string/weather_type"
-        style="@style/MyTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/city" />
@@ -62,13 +73,13 @@
 
     <TextView
         android:id="@+id/temperature"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="6dp"
         android:text="@string/temperature"
-        style="@style/MyTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/spinner1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weather_type" />
@@ -85,13 +96,13 @@
 
     <TextView
         android:id="@+id/wind"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="92dp"
         android:text="@string/wind"
-        style="@style/MyTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/spinner2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
@@ -110,13 +121,13 @@
 
     <TextView
         android:id="@+id/humidity"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="31dp"
         android:text="@string/humidity"
-        style="@style/MyTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/spinner3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wind" />
@@ -133,6 +144,7 @@
 
     <Button
         android:id="@+id/button1"
+        style="@style/MyTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"

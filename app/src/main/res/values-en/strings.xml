@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Weather</string>
+    <string name="head">Tomorrow weather</string>
+    <string name="temperature">Temperature:</string>
+    <string name="wind">Wind:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="weather_type">Weather type:</string>
+    <string name="city">Your city:</string>
+    <string name="button">Send</string>
+    <string name="tomorrow" tools:ignore="ExtraTranslation">Tomorrow will be </string>
+</resources>
