@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.Spinner;
 
 import android.widget.Switch;
@@ -31,23 +30,19 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private String[]wind = wind_en;
     private String[]humidity = {"0 - 20%", "20 - 50%", "50 - 80%", "> 80%"};
 
-    Spinner spinner;
-    Spinner spinner1;
-    Spinner spinner2;
-    Spinner spinner3;
+    private Spinner spinner;
+    private Spinner spinner1;
+    private Spinner spinner2;
+    private Spinner spinner3;
 
     private Switch aSwitch = null;
     private Locale locale;
-    private String lang = "en";
-    private Bundle savedInstanceState;
-    private static boolean flag = false;
 
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.savedInstanceState = savedInstanceState;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
 
@@ -197,7 +192,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     private void setLocale(String lang){
-        this.lang = lang;
         locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();
