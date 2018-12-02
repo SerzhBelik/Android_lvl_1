@@ -7,9 +7,9 @@
     <string name="weather_type">Тип погоды:</string>
     <string name="city">Ваш город:</string>
     <string name="button">Отправить</string>
-    <string name="tomorrow" tools:ignore="ExtraTranslation">Завтра будет </string>
-    <string name="weather1" tools:ignore="ExtraTranslation">солнечно:</string>
-    <string name="weather2" tools:ignore="ExtraTranslation">переменная облачность:</string>
-    <string name="weather3" tools:ignore="ExtraTranslation">облачно:</string>
-    <string name="weather4" tools:ignore="ExtraTranslation">осадки:</string>
+    <string name="tomorrow">Завтра будет </string>
+    <string name="weather1">солнечно:</string>
+    <string name="weather2">переменная облачность:</string>
+    <string name="weather3">облачно:</string>
+    <string name="weather4">осадки:</string>
 </resources>

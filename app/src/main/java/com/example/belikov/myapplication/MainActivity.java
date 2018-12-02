@@ -1,38 +1,61 @@
 package com.example.belikov.myapplication;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
 
     private static final String TAG = "Weather";
     private static final String TEXT = "Get weather";
-    String[] weather_en = {"sunny", "partially cloudy", "cloudy", "rainy"};
-    String[] weather_ru = {"солнечно", "переменная облачность", "облачно", "осадки"};
-    String[]temperature = {"0 - +10", "+10 - +15", "+ 15 - +10", "> +25"};
-    String[]wind_ru = {"0 - 3 м/с", "3 - 5 м/с", "5 - 10 м/с", "> 10 м/с"};
-    String[]wind_en = {"0 - 3 mps", "3 - 5 mps", "5 - 10 mps", "> 10 mps"};
-    String[]humidity = {"0 - 20%", "20 - 50%", "50 - 80%", "> 80%"};
+    private String[] weather_en = {"sunny", "partially cloudy", "cloudy", "rainy"};
+    private String[] weather_ru = {"солнечно", "переменная облачность", "облачно", "осадки"};
+    private String[] weather = weather_en;
+    private String[]temperature = {"0 - +10", "+10 - +15", "+ 15 - +10", "> +25"};
+    private String[]wind_ru = {"0 - 3 м/с", "3 - 5 м/с", "5 - 10 м/с", "> 10 м/с"};
+    private String[]wind_en = {"0 - 3 mps", "3 - 5 mps", "5 - 10 mps", "> 10 mps"};
+    private String[]wind = wind_en;
+    private String[]humidity = {"0 - 20%", "20 - 50%", "50 - 80%", "> 80%"};
 
     Spinner spinner;
     Spinner spinner1;
     Spinner spinner2;
     Spinner spinner3;
 
+    private Switch aSwitch = null;
+    private Locale locale;
+    private String lang = "en";
+    private Bundle savedInstanceState;
+    private static boolean flag = false;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.savedInstanceState = savedInstanceState;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
+
+//        if (savedInstanceState != null) {
+//            lang = savedInstanceState.getString("lang");
+//            wind = savedInstanceState.getStringArray("wind");
+//            weather = savedInstanceState.getStringArray("weather");
+//        }
+
 
         String instanceState;
         if (savedInstanceState == null){
@@ -42,17 +65,28 @@ public class MainActivity extends AppCompatActivity {
             instanceState = "Повторный запуск!";
         }
 
-//        Switch switch = findViewById(R.id.monitored_switch);
-//        if (switch != null) {
-//            switch.setOnCheckedChangeListener(this);
-//        }
+
+        aSwitch = findViewById(R.id.switch1);
+        if (aSwitch != null) {
+            aSwitch.setOnCheckedChangeListener(this);
+        }
+
+        if (Locale.getDefault().getLanguage().equals("ru")){
+            weather = weather_ru;
+            wind = wind_ru;
+            aSwitch.setChecked(true);
+        } else {
+            weather = weather_en;
+            wind = wind_en;
+            aSwitch.setChecked(false);
+        }
 
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
         Log.i(TAG, instanceState + " - onCreate()");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, weather_en);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, weather);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, temperature);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wind_en);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wind);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, humidity);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -146,7 +180,42 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+        startActivityForResult(new Intent(this, MainActivity.class), 0);
         Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
         Log.i(TAG, "onRestart()");
+    }
+
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+
+        if (isChecked){
+            if(flag) return;
+            setLocale("ru");
+            flag = true;
+
+
+        }
+        if (!isChecked){
+            if (!flag) return;
+            if (Locale.getDefault().getLanguage().equals("en")) return;
+            setLocale("en");
+            flag = false;
+
+
+        }
+
+        startActivityForResult(new Intent(this, MainActivity.class), 0);
+
+    }
+
+    private void setLocale(String lang){
+        this.lang = lang;
+        locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 }

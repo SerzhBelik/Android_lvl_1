@@ -8,4 +8,8 @@
     <string name="city">Ваш город:</string>
     <string name="button">Отправить</string>
     <string name="tomorrow" translatable="false">Завтра будет </string>
+    <string name="weather1" translatable="false">солнечно:</string>
+    <string name="weather2" translatable="false">переменная облачность:</string>
+    <string name="weather3" translatable="false">облачно:</string>
+    <string name="weather4" translatable="false">осадки:</string>
 </resources>
