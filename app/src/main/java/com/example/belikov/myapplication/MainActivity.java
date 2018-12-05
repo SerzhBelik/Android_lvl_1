@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         spinner2.setSelection(0);
         spinner3.setSelection(0);
 
-        Button button = findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button button1 = findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("WrongViewCast")
             @Override
             public void onClick(View v) {
@@ -115,7 +115,25 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             }
         });
 
-    }
+
+    Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+        @SuppressLint("WrongViewCast")
+        @Override
+        public void onClick(View v) {
+            Parcel parcel = new Parcel();
+            parcel.city = findViewById(R.id.editText1).toString();
+            parcel.weather = spinner.getSelectedItem().toString();
+            parcel.temperature = spinner1.getSelectedItem().toString();
+            parcel.wind = spinner2.getSelectedItem().toString();
+            parcel.humidity = spinner3.getSelectedItem().toString();
+            Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
+            intent.putExtra(TEXT, parcel);
+            startActivity(intent);
+        }
+    });
+
+}
 
 
     @Override

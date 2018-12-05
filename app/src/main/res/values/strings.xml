@@ -12,4 +12,11 @@
     <string name="weather2" translatable="false">переменная облачность:</string>
     <string name="weather3" translatable="false">облачно:</string>
     <string name="weather4" translatable="false">осадки:</string>
+    <string name="empty" translatable="false">Список город пуст</string>
+        <string-array name="Weather">
+            <item>Температура</item>
+            <item>Ветер</item>
+            <item>Влажность</item>
+        </string-array>
+
 </resources>

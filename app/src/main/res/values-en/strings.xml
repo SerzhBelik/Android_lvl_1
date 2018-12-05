@@ -8,4 +8,12 @@
     <string name="city">Your city:</string>
     <string name="button">Send</string>
     <string name="tomorrow" tools:ignore="ExtraTranslation">Tomorrow will be </string>
+    <string name="empty" translatable="false">Список город пуст</string>
+    <string-array name="Cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Екатеринбург</item>
+        <item>Новосибирск</item>
+        <item>Самара</item>
+    </string-array>
 </resources>
