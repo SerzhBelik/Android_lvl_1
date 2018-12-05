@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private Switch aSwitch = null;
     private Locale locale;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,6 +1,5 @@
 package com.example.belikov.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -14,7 +13,6 @@ public class WeatherParam extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.param_fragment);
         Parcel parcel = (Parcel) getIntent().getExtras().getSerializable(TEXT);
-
         Toast.makeText(getApplicationContext(), "onCreate(), " + parcel.weatherArr[1], Toast.LENGTH_SHORT).show();
         }
 }
