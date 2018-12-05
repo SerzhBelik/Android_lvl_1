@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             parcel.temperature = spinner1.getSelectedItem().toString();
             parcel.wind = spinner2.getSelectedItem().toString();
             parcel.humidity = spinner3.getSelectedItem().toString();
+            parcel.setWeatherArr();
             Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
             intent.putExtra(TEXT, parcel);
             startActivity(intent);

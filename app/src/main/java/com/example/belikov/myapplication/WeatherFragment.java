@@ -16,6 +16,7 @@ public class WeatherFragment extends ListFragment {
 
     boolean isExistCoatofarms;  // Можно ли расположить рядом фрагмент с гербом
     int currentPosition = 0;    // Текущая позиция (выбранный город)
+    private static final String TEXT = "Get weather";
 
     // При создании фрагмента укажем его макет
     @Override
@@ -84,10 +85,14 @@ public class WeatherFragment extends ListFragment {
 //
 //        } else {
 //// Если нельзя вывести герб рядом, откроем вторую activity
+            Parcel parcel = (Parcel) getActivity().getIntent().getExtras().getSerializable(TEXT);
+            parcel.currentPosition = currentPosition;
+
+
             Intent intent = new Intent();
             intent.setClass(getActivity(),WeatherParam.class);
 //// и передадим туда параметры
-            intent.putExtra("index", currentPosition);
+            intent.putExtra(TEXT, parcel);
             startActivity(intent);
 //        }
 //
