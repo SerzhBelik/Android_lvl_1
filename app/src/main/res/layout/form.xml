@@ -32,7 +32,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="11dp"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="none"
         app:layout_constraintBottom_toTopOf="@+id/weather_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/city"
