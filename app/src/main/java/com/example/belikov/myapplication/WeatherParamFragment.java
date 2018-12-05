@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WeatherParamFragment extends Fragment {
-    // Фабричный метод создает фрагмент и передает параметр
-    public static WeatherParamFragment create(int index) {
-        WeatherParamFragment w = new WeatherParamFragment();    // создание
+//    // Фабричный метод создает фрагмент и передает параметр
+//    public static WeatherParamFragment create(int index) {
+//        WeatherParamFragment w = new WeatherParamFragment();    // создание
 
-        // Передача параметра
-        Bundle args = new Bundle();
-        args.putInt("index", index);
-        w.setArguments(args);
-        return w;
-    }
+//        // Передача параметра
+//        Bundle args = new Bundle();
+//        args.putInt("index", index);
+//        w.setArguments(args);
+//        return w;
+//    }
 
     // Получить индекс из списка (фактически из параметра)
     public int getIndex() {
@@ -31,8 +31,8 @@ public class WeatherParamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        TextView weaterParam = (TextView) getActivity().findViewById(R.id.)
         View v = inflater.inflate(R.layout.weather_param, container, true);
-        TextView weaterParam = v.findViewById(R.id.w_param);
-        weaterParam.setText();
+//        TextView weatherParam = v.findViewById(R.id.w_param);
+//        weatherParam.setText("Ололо");
         return v;
 
         // Определить какой герб надо показать, и показать его

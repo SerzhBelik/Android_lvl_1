@@ -73,7 +73,7 @@ public class WeatherFragment extends ListFragment {
 //// Если есть необходимость, то выведем герб
 //            if (detail == null || detail.getIndex() != currentPosition) {
 //// Создаем новый фрагмент с текущей позицией для вывода герба
-        WeatherParamFragment detail = WeatherParamFragment.create(currentPosition);
+//        WeatherParamFragment detail = new WeatherParamFragment();
 //
 //// Выполняем транзакцию по замене фрагмента
 //                FragmentTransaction ft = getFragmentManager().beginTransaction();

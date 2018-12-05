@@ -7,16 +7,7 @@ public class WeatherParam extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        if (getResources().getConfiguration().orientation == ORIENTATION_LANDSCAPE) {
-//            // Если устройство перевернули в альбомную ориентацию, то надо эту activity закрыть
-//            finish();
-//            return;
-//        }
-
-        if (savedInstanceState == null) {
-//            super.onCreate(savedInstanceState);
             setContentView(R.layout.param_fragment);
+
         }
-    }
 }
