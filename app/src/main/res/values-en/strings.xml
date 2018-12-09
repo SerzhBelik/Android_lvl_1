@@ -4,6 +4,7 @@
   <string name="temperature">Temperature:</string>
   <string name="wind">Wind:</string>
   <string name="humidity">Humidity:</string>
+  <string name="pressure">Pressure:</string>
   <string name="weather_type">Weather type:</string>
   <string name="city">Your city:</string>
   <string name="button">Send</string>
@@ -13,6 +14,13 @@
     <item>partially cloudy</item>
     <item>cloudy</item>
     <item>rainy</item>
+  </string-array>
+
+  <string-array name="Weather">
+    <item>Temperature</item>
+    <item>Wind</item>
+    <item>Humidity</item>
+    <item>Pressure</item>
   </string-array>
 
   <string-array name="Wind">
@@ -34,6 +42,13 @@
     <item>20 - 50%</item>
     <item>50 - 80</item>
     <item>> 80%</item>
+  </string-array>
+
+  <string-array name="Pressure">
+    <item>740-750 mm Hg</item>
+    <item>750-760 mm Hg</item>
+    <item>760-770 mm Hg</item>
+    <item>770-780 mm Hg</item>
   </string-array>
 
 </resources>

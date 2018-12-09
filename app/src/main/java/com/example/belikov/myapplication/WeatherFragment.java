@@ -62,7 +62,7 @@ public class WeatherFragment extends ListFragment {
 
             getListView().setItemChecked(currentPosition, true);
 
-            MyParcel parcel = getActivity().getIntent().getParcelableExtra(TEXT);
+            MyParcel parcel = getActivity().getIntent().getParcelableExtra(MainActivity.TEXT);
             parcel.currentPosition = currentPosition;
 
 

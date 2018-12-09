@@ -8,8 +8,9 @@ class MyParcel implements Parcelable {
     public String temperature;
     public String wind;
     public String humidity;
+    public String pressure;
     public int currentPosition;
-    public String[] weatherArr = new String[3];
+    public String[] weatherArr = new String[4];
 
     protected MyParcel(android.os.Parcel in) {
         city = in.readString();
@@ -17,16 +18,18 @@ class MyParcel implements Parcelable {
         temperature = in.readString();
         wind = in.readString();
         humidity = in.readString();
+        pressure = in.readString();
         currentPosition = in.readInt();
         weatherArr = in.createStringArray();
-    }
+        }
 
-    public MyParcel (String city, String weather, String temperature, String wind, String humidity, int currentPosition){
+    public MyParcel (String city, String weather, String temperature, String wind, String humidity, String pressure, int currentPosition){
         this.city = city;
         this.weather = weather;
         this.temperature = temperature;
         this.wind = wind;
         this.humidity = humidity;
+        this.pressure = pressure;
         this.currentPosition = currentPosition;
     }
 
@@ -46,6 +49,7 @@ class MyParcel implements Parcelable {
         weatherArr[0] = temperature;
         weatherArr[1] = wind;
         weatherArr[2] = humidity;
+        weatherArr[3] = pressure;
     }
 
     @Override
@@ -60,6 +64,7 @@ class MyParcel implements Parcelable {
         dest.writeString(temperature);
         dest.writeString(wind);
         dest.writeString(humidity);
+        dest.writeString(pressure);
         dest.writeInt(currentPosition);
         setWeatherArr();
         dest.writeStringArray(weatherArr);

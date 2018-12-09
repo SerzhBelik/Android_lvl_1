@@ -22,6 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         TextView temperature = findViewById(R.id.temperature);
         TextView wind = findViewById(R.id.wind);
         TextView humidity = findViewById(R.id.humidity);
+        TextView perssure = findViewById(R.id.perssure);
         String tomorrow = getResources().getString(R.string.tomorrow);
 
         city.setText(city.getText() + " " + parcel.city);
@@ -29,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
         temperature.setText(temperature.getText() + " " + parcel.temperature);
         wind.setText(wind.getText() + " " + parcel.wind);
         humidity.setText(humidity.getText() + " " + parcel.humidity);
+        perssure.setText(perssure.getText() + " " + parcel.pressure);
 
         String instanceState;
         if (savedInstanceState == null) {

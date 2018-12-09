@@ -63,6 +63,15 @@
         android:layout_margin="10dp"
          />
 
+    <TextView
+        android:id="@+id/perssure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pressure"
+        style="@style/MyTextStyle"
+        android:layout_margin="10dp"
+        />
+
 
 
 </LinearLayout>

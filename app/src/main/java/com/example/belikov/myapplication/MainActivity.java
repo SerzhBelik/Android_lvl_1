@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -19,20 +18,13 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
 
     private static final String TAG = "Weather";
-    private static final String TEXT = "Get weather";
-//    private String[] weather_en = {"sunny", "partially cloudy", "cloudy", "rainy"};
-//    private String[] weather_ru = {"солнечно", "переменная облачность", "облачно", "осадки"};
-//    private String[] weather = weather_en;
-    private String[]temperature = {"0 - +10", "+10 - +15", "+ 15 - +10", "> +25"};
-//    private String[]wind_ru = {"0 - 3 м/с", "3 - 5 м/с", "5 - 10 м/с", "> 10 м/с"};
-//    private String[]wind_en = {"0 - 3 mps", "3 - 5 mps", "5 - 10 mps", "> 10 mps"};
-//    private String[]wind = wind_en;
-    private String[]humidity = {"0 - 20%", "20 - 50%", "50 - 80%", "> 80%"};
+    public static final String TEXT = "Get weather";
 
     private Spinner spinner;
     private Spinner spinner1;
     private Spinner spinner2;
     private Spinner spinner3;
+    private Spinner spinner4;
 
     private Switch aSwitch;
     private Locale locale;
@@ -50,49 +42,25 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             instanceState = "Повторный запуск!";
         }
 
-
         aSwitch = findViewById(R.id.switch1);
         if (aSwitch != null) {
             aSwitch.setOnCheckedChangeListener(this);
         }
 
         if (Locale.getDefault().getLanguage().equals("ru")){
-//            weather = weather_ru;
-//            wind = wind_ru;
             aSwitch.setChecked(true);
         } else {
-//            weather = weather_en;
-//            wind = wind_en;
             aSwitch.setChecked(false);
         }
 
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
         Log.i(TAG, instanceState + " - onCreate()");
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, R.s);
-//        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, temperature);
-//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wind);
-//        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, humidity);
-
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
         spinner = findViewById(R.id.spinner);
         spinner1 = findViewById(R.id.spinner1);
         spinner2 = findViewById(R.id.spinner2);
         spinner3 = findViewById(R.id.spinner3);
-//        spinner.setAdapter(adapter);
-//        spinner1.setAdapter(adapter1);
-//        spinner2.setAdapter(adapter2);
-//        spinner3.setAdapter(adapter3);
-
-//        spinner.setSelection(0);
-//        spinner1.setSelection(0);
-//        spinner2.setSelection(0);
-//        spinner3.setSelection(0);
+        spinner4 = findViewById(R.id.spinner4);
 
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -100,12 +68,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.editText1);
-                String sityName = editText.getText().toString();
-                Toast.makeText(getApplicationContext(), sityName, Toast.LENGTH_SHORT).show();
-                MyParcel myParcel = new MyParcel(sityName, spinner.getSelectedItem().toString(),
-                        spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(), spinner3.getSelectedItem().toString(), 0);
+                String cityName = editText.getText().toString();
+                MyParcel myParcel = new MyParcel(cityName, spinner.getSelectedItem().toString(),
+                        spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(),
+                        spinner3.getSelectedItem().toString(), spinner4.getSelectedItem().toString(), 0);
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra(SecondActivity.TEXT, myParcel);
+                intent.putExtra(TEXT, myParcel);
                 startActivity(intent);
             }
         });
@@ -117,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         @Override
         public void onClick(View v) {
             MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
-                    spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(), spinner3.getSelectedItem().toString(),0);
+                    spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(),
+                    spinner3.getSelectedItem().toString(), spinner4.getSelectedItem().toString(),0);
             Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
             intent.putExtra(TEXT, myParcel);
             startActivity(intent);
@@ -125,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     });
 
 }
-
 
     @Override
     protected void onStart() {
@@ -207,6 +175,5 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         configuration.locale = locale;
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
-
 
 }
