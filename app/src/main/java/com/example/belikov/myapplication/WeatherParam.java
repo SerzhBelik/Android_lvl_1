@@ -12,7 +12,7 @@ public class WeatherParam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.param_fragment);
-        Parcel parcel = (Parcel) getIntent().getExtras().getSerializable(TEXT);
+        MyParcel parcel = (MyParcel) getIntent().getParcelableExtra(TEXT);
         Toast.makeText(getApplicationContext(), "onCreate(), " + parcel.weatherArr[1], Toast.LENGTH_SHORT).show();
         }
 }

@@ -14,7 +14,7 @@ public class WeatherParamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.weather_param, container, true);
         TextView weatherParam = v.findViewById(R.id.w_param);
-        Parcel parcel = (Parcel) getActivity().getIntent().getExtras().getSerializable(TEXT);
+        MyParcel parcel = getActivity().getIntent().getParcelableExtra(TEXT);
         weatherParam.setText(parcel.weatherArr[parcel.currentPosition]);
 
         return v;

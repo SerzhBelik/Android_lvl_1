@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private Spinner spinner2;
     private Spinner spinner3;
 
-    private Switch aSwitch = null;
+    private Switch aSwitch;
     private Locale locale;
 
     @Override
@@ -100,14 +100,15 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             @SuppressLint("WrongViewCast")
             @Override
             public void onClick(View v) {
-                Parcel parcel = new Parcel();
-                parcel.city = findViewById(R.id.editText1).toString();
-                parcel.weather = spinner.getSelectedItem().toString();
-                parcel.temperature = spinner1.getSelectedItem().toString();
-                parcel.wind = spinner2.getSelectedItem().toString();
-                parcel.humidity = spinner3.getSelectedItem().toString();
+                MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
+                        spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(), spinner3.getSelectedItem().toString(), 0);
+//                myParcel.city = findViewById(R.id.editText1).toString();
+//                myParcel.weather = spinner.getSelectedItem().toString();
+//                myParcel.temperature = spinner1.getSelectedItem().toString();
+//                myParcel.wind = spinner2.getSelectedItem().toString();
+//                myParcel.humidity = spinner3.getSelectedItem().toString();
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra(TEXT, parcel);
+                intent.putExtra(SecondActivity.TEXT, myParcel);
                 startActivity(intent);
             }
         });
@@ -118,15 +119,16 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         @SuppressLint("WrongViewCast")
         @Override
         public void onClick(View v) {
-            Parcel parcel = new Parcel();
-            parcel.city = findViewById(R.id.editText1).toString();
-            parcel.weather = spinner.getSelectedItem().toString();
-            parcel.temperature = spinner1.getSelectedItem().toString();
-            parcel.wind = spinner2.getSelectedItem().toString();
-            parcel.humidity = spinner3.getSelectedItem().toString();
-            parcel.setWeatherArr();
+            MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
+                    spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(), spinner3.getSelectedItem().toString(),0);
+//            parcel.city = findViewById(R.id.editText1).toString();
+//            parcel.weather = spinner.getSelectedItem().toString();
+//            parcel.temperature = spinner1.getSelectedItem().toString();
+//            parcel.wind = spinner2.getSelectedItem().toString();
+//            parcel.humidity = spinner3.getSelectedItem().toString();
+//            parcel.setWeatherArr();
             Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
-            intent.putExtra(TEXT, parcel);
+            intent.putExtra(TEXT, myParcel);
             startActivity(intent);
         }
     });
