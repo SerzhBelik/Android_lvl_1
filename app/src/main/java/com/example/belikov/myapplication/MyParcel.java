@@ -1,9 +1,6 @@
 package com.example.belikov.myapplication;
 
-import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.Serializable;
 
 class MyParcel implements Parcelable {
     public String city;

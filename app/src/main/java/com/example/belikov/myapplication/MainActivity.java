@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import android.widget.Switch;
@@ -100,7 +101,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             @SuppressLint("WrongViewCast")
             @Override
             public void onClick(View v) {
-                MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
+                EditText editText = findViewById(R.id.editText1);
+                String sityName = editText.getText().toString();
+                Toast.makeText(getApplicationContext(), sityName, Toast.LENGTH_SHORT).show();
+                MyParcel myParcel = new MyParcel(sityName, spinner.getSelectedItem().toString(),
                         spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(), spinner3.getSelectedItem().toString(), 0);
 //                myParcel.city = findViewById(R.id.editText1).toString();
 //                myParcel.weather = spinner.getSelectedItem().toString();
