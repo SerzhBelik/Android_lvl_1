@@ -16,8 +16,7 @@ import java.io.IOException;
 
 public class WeatherFragment extends ListFragment {
 
-    int currentPosition = 0;    // Текущая позиция (выбранный параметр погоды)
-    private static final String TEXT = "Get weather";
+    private int currentPosition = 0;    // Текущая позиция (выбранный параметр погоды)
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -68,7 +67,7 @@ public class WeatherFragment extends ListFragment {
 
             Intent intent = new Intent();
             intent.setClass(getActivity(),WeatherParam.class);
-            intent.putExtra(TEXT, parcel);
+            intent.putExtra(MainActivity.TEXT, parcel);
             startActivity(intent);
     }
 

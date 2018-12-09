@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class WeatherParamFragment extends Fragment {
-    private static final String TEXT = "Get weather";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -17,7 +16,6 @@ public class WeatherParamFragment extends Fragment {
         String[] params = getResources().getStringArray(R.array.Weather);
         MyParcel parcel = getActivity().getIntent().getParcelableExtra(MainActivity.TEXT);
         weatherParam.setText(params[parcel.currentPosition] + "\n" + parcel.weatherArr[parcel.currentPosition]);
-
         return v;
     }
 }

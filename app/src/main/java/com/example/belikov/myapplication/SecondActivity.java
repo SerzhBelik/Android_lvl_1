@@ -9,13 +9,12 @@ import android.widget.Toast;
 public class SecondActivity extends AppCompatActivity {
 
     private static final String TAG = "SecondActivity";
-    public static final String TEXT = "Get weather";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MyParcel parcel = getIntent().getParcelableExtra(TEXT);
+        MyParcel parcel = getIntent().getParcelableExtra(MainActivity.TEXT);
 
         TextView city = findViewById(R.id.city);
         TextView weather = findViewById(R.id.weather_type);
