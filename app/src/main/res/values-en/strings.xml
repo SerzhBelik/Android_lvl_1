@@ -1,19 +1,39 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Weather</string>
-    <string name="head">Tomorrow weather</string>
-    <string name="temperature">Temperature:</string>
-    <string name="wind">Wind:</string>
-    <string name="humidity">Humidity:</string>
-    <string name="weather_type">Weather type:</string>
-    <string name="city">Your city:</string>
-    <string name="button">Send</string>
-    <string name="tomorrow" tools:ignore="ExtraTranslation">Tomorrow will be </string>
-    <string name="empty" translatable="false">Список город пуст</string>
-    <string-array name="Cities">
-        <item>Москва</item>
-        <item>Санкт-Петербург</item>
-        <item>Екатеринбург</item>
-        <item>Новосибирск</item>
-        <item>Самара</item>
-    </string-array>
+  <string name="app_name">Weather</string>
+  <string name="head">Tomorrow weather</string>
+  <string name="temperature">Temperature:</string>
+  <string name="wind">Wind:</string>
+  <string name="humidity">Humidity:</string>
+  <string name="weather_type">Weather type:</string>
+  <string name="city">Your city:</string>
+  <string name="button">Send</string>
+  <string name="tomorrow" tools:ignore="ExtraTranslation">Tomorrow will be </string>
+  <string-array name="Weather_type">
+    <item>sunny</item>
+    <item>partially cloudy</item>
+    <item>cloudy</item>
+    <item>rainy</item>
+  </string-array>
+
+  <string-array name="Wind">
+    <item>0 - 3 mps</item>
+    <item>3 - 5 mps</item>
+    <item>5 - 10 mps</item>
+    <item>> 10 mps</item>
+  </string-array>
+
+  <string-array name="Temperature">
+    <item>0 - +10</item>
+    <item>+10 - +15</item>
+    <item>+ 15 - +10</item>
+    <item>> +25</item>
+  </string-array>
+
+  <string-array name="Humidity">
+    <item>0 - 20%</item>
+    <item>20 - 50%</item>
+    <item>50 - 80</item>
+    <item>> 80%</item>
+  </string-array>
+
 </resources>

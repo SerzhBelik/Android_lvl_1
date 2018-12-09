@@ -10,6 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
+import java.io.IOException;
+
 public class WeatherFragment extends ListFragment {
 
     int currentPosition = 0;    // Текущая позиция (выбранный параметр погоды)
@@ -37,6 +41,7 @@ public class WeatherFragment extends ListFragment {
 
             currentPosition = savedInstanceState.getInt("WeatherParam", 0);
         }
+
         Toast.makeText(getActivity().getApplicationContext(), "onActivityCreated()", Toast.LENGTH_SHORT).show();
     }
 
