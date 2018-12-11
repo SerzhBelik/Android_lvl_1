@@ -12,4 +12,6 @@
     <string name="weather2">переменная облачность:</string>
     <string name="weather3">облачно:</string>
     <string name="weather4">осадки:</string>
+    <string name="history" translatable="false">История за 10 дней</string>
+    <string name="more_history" translatable="false">Больше дней</string>
 </resources>

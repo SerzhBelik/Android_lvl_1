@@ -1,5 +1,6 @@
 package com.example.belikov.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,4 +19,8 @@ public class WeatherParamFragment extends Fragment {
         weatherParam.setText(params[parcel.currentPosition] + "\n" + parcel.weatherArr[parcel.currentPosition]);
         return v;
     }
+
+//    public void onClickHistory(View view){
+//
+//    }
 }

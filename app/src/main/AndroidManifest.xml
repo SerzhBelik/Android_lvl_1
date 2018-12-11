@@ -20,6 +20,7 @@
         <activity android:name=".SecondActivity"></activity>
         <activity android:name=".SecondActivityWithFragment"></activity>
         <activity android:name=".WeatherParam"></activity>
+        <activity android:name=".HistoryList"></activity>
     </application>
 
 </manifest>

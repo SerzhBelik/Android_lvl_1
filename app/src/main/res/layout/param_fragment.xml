@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- это макет для портретной ориентации -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <!-- в портретной ориентации у activity только один фрагмент -->
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment android:name="com.example.belikov.myapplication.WeatherParamFragment"
+        android:layout_width="0dp"
+        android:layout_height="527dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
             android:id="@+id/weather"
+            android:name="com.example.belikov.myapplication.WeatherParamFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="425dp" />
+
+
     </FrameLayout>
-</LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="326dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="bottom"
+        android:onClick="onClickHistory"
+        android:text="@string/history"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

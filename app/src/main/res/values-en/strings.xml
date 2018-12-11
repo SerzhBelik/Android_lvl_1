@@ -9,6 +9,8 @@
   <string name="city">Your city:</string>
   <string name="button">Send</string>
   <string name="tomorrow" tools:ignore="ExtraTranslation">Tomorrow will be </string>
+  <string name="history">History in 10 days</string>
+  <string name="more_history" translatable="false">Больше дней</string>
   <string-array name="Weather_type">
     <item>sunny</item>
     <item>partially cloudy</item>
