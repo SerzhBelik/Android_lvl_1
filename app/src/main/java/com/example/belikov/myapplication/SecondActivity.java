@@ -24,12 +24,12 @@ public class SecondActivity extends AppCompatActivity {
         TextView perssure = findViewById(R.id.perssure);
         String tomorrow = getResources().getString(R.string.tomorrow);
 
-        city.setText(city.getText() + " " + parcel.city);
-        weather.setText(tomorrow + " " + parcel.weather);
-        temperature.setText(temperature.getText() + " " + parcel.temperature);
-        wind.setText(wind.getText() + " " + parcel.wind);
-        humidity.setText(humidity.getText() + " " + parcel.humidity);
-        perssure.setText(perssure.getText() + " " + parcel.pressure);
+        city.setText(city.getText() + " " + parcel.getCity());
+        weather.setText(tomorrow + " " + parcel.getWeather());
+        temperature.setText(temperature.getText() + " " + parcel.getTemperature());
+        wind.setText(wind.getText() + " " + parcel.getWind());
+        humidity.setText(humidity.getText() + " " + parcel.getHumidity());
+        perssure.setText(perssure.getText() + " " + parcel.getPressure());
 
         String instanceState;
         if (savedInstanceState == null) {

@@ -3,14 +3,14 @@ package com.example.belikov.myapplication;
 import android.os.Parcelable;
 
 class MyParcel implements Parcelable {
-    public String city;
-    public String weather;
-    public String temperature;
-    public String wind;
-    public String humidity;
-    public String pressure;
-    public int currentPosition;
-    public String[] weatherArr = new String[4];
+    private String city;
+    private String weather;
+    private String temperature;
+    private String wind;
+    private String humidity;
+    private String pressure;
+    private int currentPosition;
+    private String[] weatherArr = new String[4];
 
     protected MyParcel(android.os.Parcel in) {
         city = in.readString();
@@ -57,6 +57,43 @@ class MyParcel implements Parcelable {
         return 0;
     }
 
+    public void setCurrentPosition(int currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    public String getCity() {
+
+        return city;
+    }
+
+    public String getWeather() {
+        return weather;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public String getWind() {
+        return wind;
+    }
+
+    public String getHumidity() {
+        return humidity;
+    }
+
+    public String getPressure() {
+        return pressure;
+    }
+
+    public int getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public String[] getWeatherArr() {
+        return weatherArr;
+    }
+
     @Override
     public void writeToParcel(android.os.Parcel dest, int flags) {
         dest.writeString(city);
@@ -67,7 +104,10 @@ class MyParcel implements Parcelable {
         dest.writeString(pressure);
         dest.writeInt(currentPosition);
         setWeatherArr();
+
         dest.writeStringArray(weatherArr);
     }
+
+
 
 }

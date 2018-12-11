@@ -1,7 +1,6 @@
 package com.example.belikov.myapplication;
 
 import android.os.Bundle;
-import android.os.Parcel;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,8 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.belikov.myapplication.lists_tools.HistoryAdapter;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,14 +34,10 @@ public class HistoryList extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        // Эта установка служит для повышения производительности системы
         recyclerView.setHasFixedSize(true);
 
-        // Будем работать со встроенным менеджером
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-        // Установим адаптер
 
         setDataList();
         adapter = new HistoryAdapter(dataList);
@@ -52,8 +45,6 @@ public class HistoryList extends AppCompatActivity {
     }
 
     public void onClickMoreDays(View view){
-
-
         String s = newElement(currentPosition);
         dataList.add(0, s);
         adapter.notifyDataSetChanged();
@@ -61,7 +52,7 @@ public class HistoryList extends AppCompatActivity {
 
     private void setDataList(){
         MyParcel parcel = getIntent().getParcelableExtra(MainActivity.TEXT);
-        currentPosition = parcel.currentPosition;
+        currentPosition = parcel.getCurrentPosition();
         switch (currentPosition){
             case 0:
                 dataList = new ArrayList<>(Arrays.asList(dataTemp));

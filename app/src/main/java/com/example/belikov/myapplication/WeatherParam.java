@@ -7,16 +7,14 @@ import android.view.View;
 import android.widget.Toast;
 
 public class WeatherParam extends AppCompatActivity {
-//  private int position;
-  MyParcel parcel;
+
+  private MyParcel parcel;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.param_fragment);
-
     parcel = getIntent().getParcelableExtra(MainActivity.TEXT);
-//  position = parcel.currentPosition;
 
   }
 

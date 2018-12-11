@@ -16,11 +16,8 @@ public class WeatherParamFragment extends Fragment {
         TextView weatherParam = v.findViewById(R.id.w_param);
         String[] params = getResources().getStringArray(R.array.Weather);
         MyParcel parcel = getActivity().getIntent().getParcelableExtra(MainActivity.TEXT);
-        weatherParam.setText(params[parcel.currentPosition] + "\n" + parcel.weatherArr[parcel.currentPosition]);
+        weatherParam.setText(params[parcel.getCurrentPosition()] + "\n" + parcel.getWeatherArr()[parcel.getCurrentPosition()]);
         return v;
     }
 
-//    public void onClickHistory(View view){
-//
-//    }
 }

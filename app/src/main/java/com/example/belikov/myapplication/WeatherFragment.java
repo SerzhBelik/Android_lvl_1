@@ -3,11 +3,14 @@ import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -16,12 +19,13 @@ import java.io.IOException;
 
 public class WeatherFragment extends ListFragment {
 
-    private int currentPosition = 0;    // Текущая позиция (выбранный параметр погоды)
+    private int currentPosition;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
         Toast.makeText(getActivity().getApplicationContext(), "onCreateView()", Toast.LENGTH_SHORT).show();
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
@@ -29,6 +33,7 @@ public class WeatherFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.Weather,
@@ -62,7 +67,7 @@ public class WeatherFragment extends ListFragment {
             getListView().setItemChecked(currentPosition, true);
 
             MyParcel parcel = getActivity().getIntent().getParcelableExtra(MainActivity.TEXT);
-            parcel.currentPosition = currentPosition;
+            parcel.setCurrentPosition(currentPosition);
 
 
             Intent intent = new Intent();
