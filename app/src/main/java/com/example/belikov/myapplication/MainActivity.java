@@ -79,21 +79,21 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         });
 
 
-    Button button = findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
-        @SuppressLint("WrongViewCast")
-        @Override
-        public void onClick(View v) {
-            MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
-                    spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(),
-                    spinner3.getSelectedItem().toString(), spinner4.getSelectedItem().toString(),0);
-            Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
-            intent.putExtra(TEXT, myParcel);
-            startActivity(intent);
-        }
-    });
+            @SuppressLint("WrongViewCast")
+            @Override
+            public void onClick(View v) {
+                MyParcel myParcel = new MyParcel(findViewById(R.id.editText1).toString(), spinner.getSelectedItem().toString(),
+                        spinner1.getSelectedItem().toString(), spinner2.getSelectedItem().toString(),
+                        spinner3.getSelectedItem().toString(), spinner4.getSelectedItem().toString(),0);
+                Intent intent = new Intent(MainActivity.this, SecondActivityWithFragment.class);
+                intent.putExtra(TEXT, myParcel);
+                startActivity(intent);
+            }
+        });
 
-}
+    }
 
     @Override
     protected void onStart() {

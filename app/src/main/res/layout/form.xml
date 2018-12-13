@@ -169,7 +169,6 @@
 
     <Button
         android:id="@+id/button1"
-        style="@style/MyButton"
         android:layout_width="0dp"
         android:layout_height="47dp"
         android:layout_marginStart="10dp"
@@ -180,7 +179,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:theme="@style/MyButton"/>
 
     <Switch
         android:id="@+id/switch1"
@@ -209,7 +209,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/button1"
+        app:theme="@style/MyButton"/>
 
     <TextView
         android:id="@+id/textView"
