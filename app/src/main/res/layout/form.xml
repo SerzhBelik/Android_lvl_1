@@ -197,7 +197,6 @@
 
     <Button
         android:id="@+id/button"
-        style="@style/MyButton"
         android:layout_width="361dp"
         android:layout_height="0dp"
         android:layout_marginStart="18dp"
@@ -211,6 +210,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button1"
         app:theme="@style/MyButton"/>
+    />
 
     <TextView
         android:id="@+id/textView"

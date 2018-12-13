@@ -28,8 +28,6 @@
 
     <style name="MyButton" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/myColorPrimary</item>
-        <item name="colorAccent">@color/myColorPrimary</item>
-        <item name="colorControlHighlight">#673ab7</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">20sp</item>
     </style>
