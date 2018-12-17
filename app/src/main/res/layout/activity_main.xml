@@ -4,49 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <!-- Создаем Action Bar -->
+    <!-- Заголовок экрана - здесь располагаем Action Bar, меню, картинки и т.д. -->
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        <!-- сворачивающийся контейнер заголовка -->
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbarLayout"
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
 
-            <!--<ImageView-->
-                <!--android:id="@+id/main.backdrop"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:fitsSystemWindows="true"-->
-                <!--android:scaleType="centerCrop"-->
-                <!--android:src="@drawable/matdes"-->
-                <!--app:layout_collapseMode="parallax" />-->
 
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="?attr/actionBarSize"-->
-                <!--app:layout_collapseMode="pin"-->
-                <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <!-- Включим макет content в этот макет (см. соответствующий файл) -->
-    <android.support.v4.widget.NestedScrollView
+    <!-- сюда вставляем контент -->
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.example.belikov.myapplication.MainActivity"
+        >
 
         <include
             layout="@layout/content_main"
@@ -55,15 +54,17 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <!-- Добавим плавающую кнопку -->
+    <!-- плавающая кнопка -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <!-- Добавим изображение с собственной анимацией -->
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
