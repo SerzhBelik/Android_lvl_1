@@ -5,16 +5,16 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="sdfsdf"
+        android:title="меню 1"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_params"
         android:orderInCategory="100"
-        android:title="dsfsdf"
+        android:title="меню 2"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_preferences"
         android:orderInCategory="100"
-        android:title="vdsgfsd"
+        android:title="меню 3"
         app:showAsAction="never" />
 </menu>

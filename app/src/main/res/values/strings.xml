@@ -4,13 +4,61 @@
     <string name="temperature">Температура:</string>
     <string name="wind">Ветер:</string>
     <string name="humidity">Влажность:</string>
+    <string name="pressure" translatable="false">Давление:</string>
     <string name="weather_type">Тип погоды:</string>
     <string name="city">Ваш город:</string>
     <string name="button">Отправить</string>
-    <string name="tomorrow" translatable="false">Завтра будет </string>
+    <string name="history" translatable="false">История за 10 дней</string>
+    <string name="more_history" translatable="false">More days</string>
+    <string name="tomorrow" >Завтра будет </string>
     <string name="weather1" translatable="false">солнечно:</string>
     <string name="weather2" translatable="false">переменная облачность:</string>
     <string name="weather3" translatable="false">облачно:</string>
     <string name="weather4" translatable="false">осадки:</string>
+    <string name="empty" translatable="false">Список город пуст</string>
+
+
+
+    <string-array name="Weather">
+        <item>Температура</item>
+        <item>Ветер</item>
+        <item>Влажность</item>
+        <item>Давление</item>
+    </string-array>
+
+    <string-array name="Weather_type">
+        <item>солнечно</item>
+        <item>переменная облачность</item>
+        <item>облачно</item>
+        <item>осадки</item>
+    </string-array>
+
+    <string-array name="Wind">
+        <item>0 - 3 м/с</item>
+        <item>3 - 5 м/с</item>
+        <item>5 - 10 м/с</item>
+        <item>> 10 м/с</item>
+    </string-array>
+
+    <string-array name="Temperature">
+        <item>0 - +10</item>
+        <item>+10 - +15</item>
+        <item>+ 15 - +10</item>
+        <item>> +25</item>
+    </string-array>
+
+    <string-array name="Humidity">
+        <item>0 - 20%</item>
+        <item>20 - 50%</item>
+        <item>50 - 80</item>
+        <item>> 80%</item>
+    </string-array>
+
+    <string-array name="Pressure">
+        <item>740-750 мм рт. ст.</item>
+        <item>750-760 мм рт. ст.</item>
+        <item>760-770 мм рт. ст.</item>
+        <item>770-780 мм рт. ст.</item>
+    </string-array>
 
 </resources>

@@ -12,15 +12,15 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <!--<android.support.design.widget.CollapsingToolbarLayout-->
-            <!--android:id="@+id/toolbarLayout"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:fitsSystemWindows="true"-->
-            <!--app:contentScrim="?attr/colorPrimary"-->
-            <!--app:expandedTitleMarginEnd="64dp"-->
-            <!--app:expandedTitleMarginStart="48dp"-->
-            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <!--<ImageView-->
                 <!--android:id="@+id/main.backdrop"-->
@@ -38,7 +38,7 @@
                 <!--app:layout_collapseMode="pin"-->
                 <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
 
-        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+        </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -63,5 +63,12 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/cloud"
+        android:layout_gravity="top|start"
+        app:layout_behavior="com.example.belikov.myapplication.CloudBehavior"/>
 
 </android.support.design.widget.CoordinatorLayout>
