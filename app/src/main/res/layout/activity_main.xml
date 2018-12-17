@@ -1,68 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg">
-
-
-
-    <TextView
-        android:id="@+id/head"
+    tools:context="com.example.belikov.myapplication.MainActivity">
+    <!-- Создание Action Bar -->
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/head"
-        style="@style/HeadTextStyle"
-        android:layout_marginBottom="20dp"
-        />
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/city"
+    <!-- Включение макета content в этот макет (см. соответствующий файл) -->
+    <include layout="@layout/content_main" />
+
+    <!-- Добавление плавающей кнопки -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/city"
-        style="@style/MyTextStyle"
-        android:layout_margin="10dp"
-        />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <TextView
-        android:id="@+id/weather_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/weather_type"
-        style="@style/MyTextStyle"
-        android:layout_margin="10dp"
-        />
-
-    <TextView
-    android:id="@+id/temperature"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/temperature"
-    style="@style/MyTextStyle"
-    android:layout_margin="10dp"
-     />
-
-    <TextView
-        android:id="@+id/wind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/wind"
-        style="@style/MyTextStyle"
-        android:layout_margin="10dp"
-         />
-
-    <TextView
-        android:id="@+id/humidity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/humidity"
-        style="@style/MyTextStyle"
-        android:layout_margin="10dp"
-         />
-
-
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
